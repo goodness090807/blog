@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="zh-Hant">
-            <body className={openhuninnFont.className}>
-                <div className="relative flex h-screen flex-col bg-hero bg-cover bg-center w-full">
-                    <Header />
-                    <main className="flex justify-center flex-1 z-10">{children}</main>
+            <body className={openhuninnFont.className + "h-screen"}>
+                <Header />
+                <div className="relative flex flex-col bg-hero bg-cover bg-center w-full">
+                    <main className="flex justify-center flex-1">{children}</main>
                     <Footer />
                 </div>
             </body>

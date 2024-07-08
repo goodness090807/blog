@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 const Navigation = () => {
     const linkCss = cn(
@@ -19,10 +20,6 @@ const Navigation = () => {
             name: "關於我",
             href: "/about",
         },
-        {
-            name: "委託我工作",
-            href: "/entrust",
-        },
     ];
 
     return (
@@ -36,6 +33,11 @@ const Navigation = () => {
                     </li>
                 );
             })}
+            <li>
+                <Link href="https://github.com/goodness090807" target="_blink">
+                    <FaGithub className="text-black" />
+                </Link>
+            </li>
         </ul>
     );
 };

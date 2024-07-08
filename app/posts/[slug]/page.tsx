@@ -1,5 +1,5 @@
-import { getPostBySlug } from "@/lib/post-utils";
-import { Metadata, ResolvingMetadata } from "next";
+import { getPostBySlug, getPostSlugs } from "@/lib/post-utils";
+import { Metadata } from "next";
 import Markdown from "react-markdown";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
     };
 };
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const slug = params.slug;
 
     const post = await getPostBySlug(slug);
@@ -29,5 +29,9 @@ const PageDetail = async ({ params }: { params: { slug: string } }) => {
         </>
     );
 };
+
+export async function generateStaticParams() {
+    return await getPostSlugs();
+}
 
 export default PageDetail;

@@ -4,17 +4,26 @@ import matter from "gray-matter";
 
 export async function getPosts() {
     const postsDirectory = path.join(process.cwd(), "content/posts");
-    const postFiles = fs.readdirSync(postsDirectory);
+    const postFiles = await fs.readdirSync(postsDirectory);
 
     const allPosts = await Promise.all(
-        postFiles.map(async (fileName) => {
-            return await getPostBySlug(fileName);
+        postFiles.map((fileName) => {
+            return getPostBySlug(fileName);
         })
     );
 
     const sortedPosts = allPosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
     return sortedPosts;
+}
+
+export async function getPostSlugs() {
+    const postsDirectory = path.join(process.cwd(), "content/posts");
+    const postFiles = await fs.readdirSync(postsDirectory);
+
+    return postFiles.map((fileName) => {
+        return { slug: fileName };
+    });
 }
 
 export async function getPostBySlug(

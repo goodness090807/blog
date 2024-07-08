@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "../ui/Navigation";
+import Hamburger from "../ui/Hamburger";
 
 const Header = () => {
     return (
@@ -16,6 +17,7 @@ const Header = () => {
                     </span>
                 </Link>
                 <Navigation />
+                <Hamburger />
             </div>
         </header>
     );
