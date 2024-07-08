@@ -5,7 +5,7 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
 export const metadata: Metadata = {
-    title: "鐵律的技術部落",
+    title: "貼律的技術部落",
     description: "這裡紀載著各式各樣的程式筆記",
     icons: {
         icon: "/logo.png",

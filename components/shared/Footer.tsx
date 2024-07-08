@@ -1,14 +1,7 @@
 const Footer = () => {
     return (
         <footer className="flex justify-center items-center bg-slate-100 py-3">
-            <span>
-                ©{" "}
-                {
-                    // getyear
-                    new Date().getFullYear()
-                }{" "}
-                BY 鐵律的技術部落
-            </span>
+            <span>© {new Date().getFullYear()} BY 貼律的技術部落</span>
         </footer>
     );
 };
