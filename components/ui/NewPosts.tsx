@@ -12,7 +12,7 @@ const NewPosts = () => {
                 <hr className="border-b border-gray-200" />
             </CardHeader>
             <CardContent className="pb-2">
-                <Posts />
+                <Posts limit={2} />
             </CardContent>
             <CardFooter className="pb-2 flex justify-end">
                 <Button className="h-6 flex items-center">
