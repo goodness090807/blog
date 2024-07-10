@@ -1,3 +1,4 @@
+import { navigationItems } from "@/lib/variables";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -11,22 +12,11 @@ const Navigation = () => {
         "hover:after:w-full hover:after:left-0"
     );
 
-    const items = [
-        {
-            name: "文章",
-            href: "/posts",
-        },
-        {
-            name: "關於我",
-            href: "/about",
-        },
-    ];
-
     return (
         <ul className="hidden md:flex items-center text-white text-xl gap-5">
-            {items.map((item, index) => {
+            {navigationItems.map((item) => {
                 return (
-                    <li key={index}>
+                    <li key={item.name}>
                         <Link href={item.href} className={linkCss}>
                             {item.name}
                         </Link>

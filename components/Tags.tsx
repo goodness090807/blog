@@ -1,24 +1,25 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { FaChevronRight } from "react-icons/fa";
+import { getAllTags } from "@/lib/post-utils";
 
-const Tags = () => {
-    const tags = ["Javascript"];
+const Tags = async () => {
+    const tags = await getAllTags();
 
     return (
         <div className="w-full">
             <h3 className="tracking-wider font-bold text-primary text-xl">標籤們</h3>
-            <div className="w-full py-1 px-3 rounded-md border flex gap-4 items-center flex-wrap">
-                {tags.map((tag, index) => {
+            <div className="w-full p-3 rounded-md border flex gap-4 flex-wrap min-h-32">
+                {tags.map((tag) => {
                     return (
-                        <Link key={index} href={`/tags/${tag}`} title={tag} className="w-30 text-nowrap">
+                        <Link
+                            key={tag}
+                            href={`/tags/${encodeURIComponent(tag)}`}
+                            title={tag}
+                            className="w-30 text-nowrap">
                             <Button className=""># {tag}</Button>
                         </Link>
                     );
                 })}
-                <Button variant="outline" title="查看更多">
-                    <FaChevronRight />
-                </Button>
             </div>
         </div>
     );

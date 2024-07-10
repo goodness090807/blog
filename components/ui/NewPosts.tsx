@@ -1,9 +1,13 @@
+import Link from "next/link";
 import Posts from "../Posts";
 import { Button } from "./button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
 import { FaChevronRight } from "react-icons/fa";
+import { getAllPosts } from "@/lib/post-utils";
 
-const NewPosts = () => {
+const NewPosts = async () => {
+    const posts = (await getAllPosts()).slice(0, 2);
+
     return (
         <Card className="h-auto">
             <CardHeader className="p-4">
@@ -12,12 +16,14 @@ const NewPosts = () => {
                 <hr className="border-b border-gray-200" />
             </CardHeader>
             <CardContent className="pb-2">
-                <Posts limit={2} />
+                <Posts posts={posts} />
             </CardContent>
             <CardFooter className="pb-2 flex justify-end">
-                <Button className="h-6 flex items-center">
-                    看更多 <FaChevronRight />
-                </Button>
+                <Link href={"/posts"}>
+                    <Button className="h-10 flex items-center">
+                        看更多 <FaChevronRight />
+                    </Button>
+                </Link>
             </CardFooter>
         </Card>
     );
