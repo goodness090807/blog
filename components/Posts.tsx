@@ -4,9 +4,14 @@ import { Button } from "./ui/button";
 import { FaChevronRight } from "react-icons/fa";
 import { Post } from "@/lib/post-utils";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-const Posts = async ({ posts }: { posts: Array<Post> }) => {
+const Posts = async ({ posts, imageHight }: { posts: Array<Post>; imageHight?: string }) => {
     return posts.map((post) => {
+        const imageCss = cn("rounded-md h-20 md:h-40 max-w-full", {
+            "h-20 md:h-40": imageHight == undefined,
+            [String(imageHight)]: imageHight != undefined,
+        });
         return (
             <div key={post.title}>
                 <Link href={`/posts/${post.slug}`} className="group">
@@ -27,10 +32,7 @@ const Posts = async ({ posts }: { posts: Array<Post> }) => {
                         <div className="flex items-center gap-3 flex-wrap">
                             {post.tags.map((tag) => {
                                 return (
-                                    <Link
-                                        key={tag}
-                                        href={`/tags/${encodeURIComponent(tag)}`}
-                                        className="p-0 m-0 leading-1">
+                                    <Link key={tag} href={`/tags/${encodeURIComponent(tag)}`} className="p-0 m-0 leading-1">
                                         <Button variant="link" className="p-0 m-0">
                                             # {tag}
                                         </Button>
@@ -39,13 +41,7 @@ const Posts = async ({ posts }: { posts: Array<Post> }) => {
                             })}
                         </div>
                     </div>
-                    <Image
-                        src={post.imgPath}
-                        alt={post.title}
-                        width={1920}
-                        height={1080}
-                        className="rounded-md h-20 md:h-40 max-w-full"
-                    />
+                    <Image src={post.imgPath} alt={post.title} width={1920} height={1080} className={imageCss} />
                 </div>
             </div>
         );

@@ -3,15 +3,14 @@ import localFont from "next/font/local";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { cn } from "@/lib/utils";
-import { websiteName } from "@/lib/variables";
+import { websiteDescription, websiteName } from "@/lib/variables";
 import "./globals.css";
 
-const description = "這裡紀載著各式各樣的程式筆記";
 const image = `${process.env.WEB_BASE_PATH}/logo.png`;
 
 export const metadata: Metadata = {
     title: websiteName,
-    description: description,
+    description: websiteDescription,
     authors: [{ name: "蔡家誠(Terry Tsai)", url: process.env.WEB_BASE_PATH }],
     robots: "index, follow",
     icons: {
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: websiteName,
-        description: description,
+        description: websiteDescription,
         url: process.env.WEB_BASE_PATH,
         type: "website",
         images: [

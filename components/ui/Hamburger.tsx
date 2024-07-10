@@ -41,9 +41,7 @@ const Hamburger = () => {
                 {Array(3)
                     .fill(true)
                     .map((_, index) => (
-                        <div
-                            key={"line" + index}
-                            className="w-6 h-1 bg-primary group-hover:bg-primary-hover rounded-md"></div>
+                        <div key={"line" + index} className="w-6 h-1 bg-primary group-hover:bg-primary-hover rounded-md"></div>
                     ))}
             </div>
         );
@@ -57,8 +55,9 @@ const Hamburger = () => {
                 <Link href={"/"} className="w-full h-9 mt-5 flex gap-3 justify-between items-center">
                     <Image src={"/logo.png"} className="max-w-full h-10" alt={websiteName} width={48} height={38} />
                     <span
-                        className="font-bold text-lg tracking-[0.2rem]
-                        transition duration-300 ease-in-out transform hover:text-primary hover:scale-110">
+                        className="font-bold text-md tracking-[0.2rem]
+                        transition duration-300 ease-in-out transform hover:text-primary hover:scale-110"
+                    >
                         {websiteName}
                     </span>
                     <MdOutlineClose className="text-3xl" onClick={() => setOpen(false)} />
