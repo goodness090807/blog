@@ -1,17 +1,17 @@
 ---
-title: "如何在Next.js APP Router的專案中整合 GTM 和 GA4"
-description: "當完成Next.js網站開發後，除了優化SEO外，追蹤網站流量來源也是至關重要。本文將介紹如何利用Google Tag Manager (GTM)來管理Google Analytics (GA)，並在Next.js專案中安裝GTM，從而有效地監控和分析網站流量。"
+title: "如何在網站中安裝GTM 和 GA4讓你的網站能夠追蹤用戶的操作行為"
+description: "當完成網站開發後，除了優化SEO外，追蹤網站流量來源也是至關重要。本文將介紹如何利用Google Tag Manager (GTM)來管理Google Analytics (GA)，並在Next.js專案中安裝GTM，從而有效地監控和分析網站流量。"
 date: "2024-07-10"
-tags: ["Next.js", "GA4", "GTM"]
+tags: ["網頁技術", "GA4", "GTM"]
 ---
 
 ## 前置作業
 
-**在進入到整合之前，我們需要先去註冊此次所需要用到的帳號資源**
+**在進入到整合之前，我們需要先去註冊此次所需要用到的必要資源**
 
 1. Google Analytics 4 (GA4) [[連結首頁]](https://analytics.google.com/)
 
-    GA4 是 Google Analytics 的最新版本，他能夠蒐集網站或是應用程式資料，進一步去了解分析使用者的操作歷程，他還提供各項(自訂)報表，讓我們能夠更靈活的制定報表選項，可以幫助我們理解，用戶是如何使用我們的產品。(補充說明：雖然 GA4 也能夠直接安裝在網頁上，但是考慮到後續的擴充性，比較推薦直接使用 GTM 安裝)
+    GA4 能夠蒐集網站或是應用程式資料，進一步去了解分析使用者的操作歷程，他還提供各項(自訂)報表，讓我們能夠更靈活的制定報表選項，可以幫助我們理解，用戶是如何使用我們的產品。(補充說明：雖然 GA4 也能夠直接安裝在網頁上，但是考慮到後續的擴充性，比較推薦直接使用 GTM 安裝)
 
 2. Google Tag Manager (GTM) [[連結首頁]](https://tagmanager.google.com/)
 
