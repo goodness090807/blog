@@ -80,7 +80,7 @@ const AboutPage = () => {
                             嗨!我是Terry，是這個網站的作者及開發者。我是一名全端的軟體工程師，能夠獨自完成一個網站的開發，除了能夠設計出響應式(RWD)網站之外，也能讓網頁符合SEO規範，並且建立伺服器讓網站上線。
                         </p>
                         <p className="py-2 leading-relaxed">
-                            除了技術領域之外，我也很喜歡了解各項新技術的發展，並透過文章的方式記錄下來，與更多人交流，如果你對我的文章有任何想法或想要討論，歡迎隨時聯絡我。
+                            除了技術領域之外，我也很喜歡了解各項新技術的發展，並透過文章的方式記錄下來，與更多人交流，如果你對我的文章有任何想法或想要討論，歡迎與我聯絡。
                         </p>
                     </div>
                     <div className="flex gap-3">
@@ -101,7 +101,8 @@ const AboutPage = () => {
                             <div
                                 key={skill}
                                 className="bg-primary text-white px-4 py-2 rounded-full transition-all cursor-default duration-300 ease-in shadow-xl
-                                            hover:-translate-y-2 hover:bg-primary-hover">
+                                            hover:-translate-y-2 hover:bg-primary-hover"
+                            >
                                 {skill}
                             </div>
                         );
@@ -117,7 +118,8 @@ const AboutPage = () => {
                             <Link
                                 href={project.url}
                                 className="group md:flex-1 shadow-md rounded-md grow cursor-pointer transition-all duration-300 ease-in hover:-translate-y-2 hover:shadow-xl"
-                                key={project.title}>
+                                key={project.title}
+                            >
                                 <div className="overflow-hidden h-52">
                                     <Image
                                         alt={project.title}

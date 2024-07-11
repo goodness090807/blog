@@ -1,7 +1,7 @@
 ---
 title: "網站分析必備：如何利用GA4和GTM追蹤用戶與網頁的互動紀錄"
 description: "當完成網站開發後，除了優化SEO外，追蹤網站流量來源也是至關重要。本文將介紹如何啟用Google Tag Manager (GTM)並管理Google Analytics 4(GA4)，從而有效地監控和分析網站流量。"
-date: "2024-07-10"
+date: "2024-07-11"
 tags: ["網頁技術", "GA4", "GTM"]
 ---
 
@@ -58,7 +58,17 @@ GTM 和 GA 的關聯流程就到這邊結束了，但這樣還沒完成建立，
 
 ## 將 GTM 埋設到你的網站上
 
+當 GTM 跟 GA4 關聯完成後，接下來我們就可以將 GTM 放到你的網頁上啦，GTM 的攝製很簡單，只要將幾行 GTM 提供的代碼放到特定的位置，他就能自動幫你追蹤用戶的行為了。
+
+1. 找到 GTM 提供的 Script 語法
+   進入到 GTM 帳戶首頁 => 管理 => 安裝 Google 代碼管理工具
+   ![取得管理安裝碼](/content/images/gtm-get-manager-code.png)
+2. 將語法複製到網站中的對應位置
+   ![複製語法到網站](/content/images/gtm-insert-script.png)
+3. 貼完後記得把網站先部署好，再輸入你的網址做驗證
+
 ## 參考資料
 
 [[GA4] 在 Google 代碼管理工具中設定 Google Analytics (分析) 4](https://support.google.com/tagmanager/answer/9442095?hl=zh-MO)
+
 [[Youtube] Get started with Google Analytics](https://www.youtube.com/watch?v=UuE37-MM1ws&list=PLI5YfMzCfRtZ4bHJJDl_IJejxMwZFiBwz&index=2)
