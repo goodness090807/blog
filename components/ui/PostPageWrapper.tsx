@@ -10,15 +10,15 @@ interface PostPageWrapperProps {
 
 const PostPageWrapper = ({ tag, title, slot, children }: PostPageWrapperProps) => {
     return (
-        <div className="mt-5 flex flex-wrap gap-5 w-11/12 max-w-[1280px] mx-auto">
-            <div className="w-full md:w-8/12">
+        <div className="mt-5 flex flex-wrap gap-5 max-w-[1480px] mx-auto">
+            <div className="w-full mx-7 md:mx-0 md:w-8/12">
                 <h1 className="text-4xl font-bold mb-3 tracking-widest flex gap-2 items-center relative">
                     {tag}
                     <span className="relative -top-1">{title}</span>
                 </h1>
                 {children}
             </div>
-            <div className="w-full md:w-3/12 flex flex-col gap-3">
+            <div className="w-full mb-5 mx-7 md:mx-0 md:mb-0 md:w-3/12 flex flex-col gap-3 md:fixed md:top-20 md:right-10 lg:right-20">
                 {slot}
                 <Tags />
                 <div className="w-full">

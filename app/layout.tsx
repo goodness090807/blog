@@ -65,7 +65,7 @@ export default function RootLayout({
             </head>
             <body className={bodyCss}>
                 <Header />
-                <div className="flex-1">
+                <div className="flex-1 mt-20">
                     <main className="flex items-center flex-col">{children}</main>
                 </div>
                 <Footer />

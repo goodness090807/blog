@@ -6,7 +6,7 @@ import { websiteName } from "@/lib/variables";
 
 const Header = () => {
     return (
-        <header className="z-10">
+        <header className="z-10 fixed bg-white inset-0 h-20">
             <div className="flex justify-around items-center h-16 border-b shadow-md">
                 <Link href={"/"} className="flex items-center w-56 gap-3">
                     <Image src={"/logo.png"} className="max-w-full h-10" alt={websiteName} width={48} height={38} />
