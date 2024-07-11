@@ -48,6 +48,8 @@ export default function RootLayout({
     return (
         <html lang="zh-Hant-TW" className="scroll-smooth">
             <head>
+                <link rel="shortcut icon" href={image} />
+                <link rel="apple-touch-icon" href={image} />
                 {/* Google Tag Manager */}
                 <Script id="google-tag-manager">
                     {`(function (w, d, s, l, i) {
