@@ -21,6 +21,12 @@ const PostPageWrapper = ({ tag, title, slot, children }: PostPageWrapperProps) =
             <div className="w-full md:w-3/12 flex flex-col gap-3">
                 {slot}
                 <Tags />
+                <div className="w-full">
+                    <h3 className="tracking-wider font-bold text-primary text-xl">廣告</h3>
+                    <div className="w-full p-3 rounded-md border flex gap-4 flex-wrap justify-center items-center min-h-32">
+                        等待有緣人的置入
+                    </div>
+                </div>
             </div>
         </div>
     );

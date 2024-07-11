@@ -9,9 +9,10 @@ import "./globals.css";
 const image = `${process.env.WEB_BASE_PATH}/logo.png`;
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.WEB_BASE_PATH ?? ""),
     title: websiteName,
     description: websiteDescription,
-    authors: [{ name: "蔡家誠(Terry Tsai)", url: process.env.WEB_BASE_PATH }],
+    authors: [{ name: "Terry Tsai", url: process.env.WEB_BASE_PATH }],
     robots: "index, follow",
     icons: {
         icon: "/logo.png",
@@ -44,7 +45,7 @@ export default function RootLayout({
 }>) {
     const bodyCss = cn("h-screen flex flex-col", openhuninnFont.className);
     return (
-        <html lang="zh-Hant-TW">
+        <html lang="zh-Hant-TW" className="scroll-smooth">
             <body className={bodyCss}>
                 <Header />
                 <div className="flex-1">

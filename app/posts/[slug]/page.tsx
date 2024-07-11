@@ -17,6 +17,15 @@ export function generateMetadata({ params }: MetaProps): Metadata {
     return {
         title: post.title + " | " + websiteName,
         description: post.description,
+        openGraph: {
+            images: [
+                {
+                    url: post.imgPath,
+                    width: 1920,
+                    height: 1080,
+                },
+            ],
+        },
     };
 }
 
