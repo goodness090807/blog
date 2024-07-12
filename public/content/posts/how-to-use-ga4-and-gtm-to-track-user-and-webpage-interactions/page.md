@@ -19,7 +19,7 @@ tags: ["網頁技術", "GA4", "GTM"]
 
 ## 整合流程
 
-![Web串接GTM串接GA](/content/images/web-gtm-ga4.png)
+![Web串接GTM串接GA](1.png)
 
 這邊參考了 GA 文件上提供的[流程圖](https://support.google.com/tagmanager/answer/9442095?hl=zh-Hant)，根據上圖所顯示的關聯，大概能分成幾個重點
 
@@ -30,29 +30,29 @@ tags: ["網頁技術", "GA4", "GTM"]
 ## 關聯 GTM 與 GA4
 
 1. 在進行關聯之前，需要先建立 GTM 和 GA4 的帳號，並且從 GA4 取得你的 Google 代碼，進入 [GA4 首頁](https://analytics.google.com/) 後，點擊左下角設定的 ICON，點擊【資料串流】，如果還沒有串流則需要先建立串流
-   ![設定串流](/content/images/ga4-set-stream.png)
-   ![建立串流](/content/images/ga4-add-stream.png)
+   ![設定串流](2.png)
+   ![建立串流](3.png)
 2. 建立完成後，會出現**設定 Google 代碼**的頁面，這個頁面可以不用理他，後續會使用 GTM 協助設定，可以先關閉
-   ![不用設定GA4代碼](/content/images/ga4-not-use.png)
-3. 關閉後，會出現有包含 G-\*代碼的頁面，需要把這個複製起來，後續在 GTM 設定時會用到
-   ![GA4ID](/content/images/ga4-gtm-id.png)
+   ![不用設定GA4代碼](4.png)
+3. 關閉後，會出現有包含 G-\*代碼的頁面，需要先把這個複製起來，後續在 GTM 設定時會用到
+   ![GA4ID](5.png)
 4. 建立並複製好之後就先進入到 [GTM 首頁](https://tagmanager.google.com/) ，並點擊【新增代碼】區塊
-   ![新增代碼](/content/images/gtm-add-tag.png)
+   ![新增代碼](6.png)
 5. 接下來可以先為你的代碼取一個較好識別的名稱，再點擊【代碼設定】區塊
-   ![代碼設定](/content/images/gtm-setting-tag.png)
+   ![代碼設定](7.png)
 6. 接下來點擊 google 代碼，並把剛剛複製的 GA 的 ID 貼到【代碼 ID】輸入框內，並點擊觸發條件
-   ![Google代碼畫面](/content/images/gtm-google-tag.png)
-   ![新增GA代碼](/content/images/gtm-tag-insert.png)
+   ![Google代碼畫面](8.png)
+   ![新增GA代碼](9.png)
 7. 點擊【Initialization - All Pages】，設置初始化的時候會觸發
-   ![Initialization - All Pages](/content/images/gtm-ga-trigger.png)
+   ![Initialization - All Pages](10.png)
 8. 點擊儲存
-   ![代碼安裝儲存](/content/images/gtm-tag-save.png)
+   ![代碼安裝儲存](11.png)
 9. 點擊提交
-   ![提交](/content/images/gtm-submit.png)
+   ![提交](12.png)
 10. 最後輸入版本名稱和版本說明後點擊【發布】
-    ![發布](/content/images/gtm-publish.png)
+    ![發布](13.png)
 11. 成功畫面
-    ![成功畫面](/content/images/gtm-success.png)
+    ![成功畫面](14.png)
 
 GTM 和 GA 的關聯流程就到這邊結束了，但這樣還沒完成建立，還需要與我們的網站做整合，才能真正地接收到資料。
 
@@ -62,11 +62,11 @@ GTM 和 GA 的關聯流程就到這邊結束了，但這樣還沒完成建立，
 
 1. 找到 GTM 提供的 Script 語法
    進入到 GTM 帳戶首頁 => 管理 => 安裝 Google 代碼管理工具
-   ![取得管理安裝碼](/content/images/gtm-get-manager-code.png)
+   ![取得管理安裝碼](15.png)
 2. 將語法複製到網站中的對應位置
-   ![複製語法到網站](/content/images/gtm-insert-script.png)
+   ![複製語法到網站](16.png)
 3. 貼完後記得把網站先部署好，再輸入你的網址做驗證
-   ![驗證成功](/content/images/gtm-valid.png)
+   ![驗證成功](17.png)
 
 ## 功能驗證
 
@@ -80,13 +80,17 @@ GTM 和 GA 的關聯流程就到這邊結束了，但這樣還沒完成建立，
 4. 在 Filter 輸入 gtm
 5. 會看到有幾個跟 GTM 相關的資訊被傳送出去
 
-![確認GTM有成功發送資料](/content/images/gtm-check-success.png)
+![確認GTM有成功發送資料](18.png)
 
 這樣就確認資料有成功被傳送到 GA4 上面囉，我們也可以回 GA4 確認一下是否有紀錄。
 
 以上就是如何在網站使用 GTM + GA4 的方式，希望能夠幫助到大家去分析自己網站上的用戶訊息，並打造出更好的銷售策略。
 
+<br />
+
 ---
+
+<br />
 
 如果有任何想法，歡迎與我聯絡交流。
 
