@@ -2,7 +2,7 @@ import { getPostBySlug, getPostSlugs } from "@/lib/post-utils";
 import { Metadata } from "next";
 import { MdAccessTime } from "react-icons/md";
 import { MarkdownRenderer } from "@/components/ui/markdown";
-import PostPageWrapper from "@/components/ui/PostPageWrapper";
+import PostPageWrapper from "@/components/PostPageWrapper";
 import { MetaProps, websiteName } from "@/lib/variables";
 import Image from "next/image";
 import { getHeadings } from "@/lib/utils";

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navigation from "../ui/Navigation";
-import Hamburger from "../ui/Hamburger";
+import Navigation from "./Navigation";
+import Hamburger from "../Hamburger";
 import { websiteName } from "@/lib/variables";
 
 const Header = () => {

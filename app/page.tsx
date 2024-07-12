@@ -4,7 +4,7 @@ import Link from "next/link";
 import { websiteDescription, websiteName } from "@/lib/variables";
 import { FaSearch } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import NewPosts from "@/components/ui/NewPosts";
+import NewPosts from "@/components/NewPosts";
 
 export default function Home() {
     const subTitleCss = cn("text-md font-bold leading-relaxed text-primary", "lg:text-2xl");

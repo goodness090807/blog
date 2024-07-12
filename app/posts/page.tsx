@@ -1,5 +1,5 @@
 import Posts from "@/components/Posts";
-import PostPageWrapper from "@/components/ui/PostPageWrapper";
+import PostPageWrapper from "@/components/PostPageWrapper";
 import { getAllPosts } from "@/lib/post-utils";
 import { websiteName } from "@/lib/variables";
 import { Metadata } from "next";

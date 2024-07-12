@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Posts from "../Posts";
-import { Button } from "./button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
+import Posts from "./Posts";
+import { Button } from "./ui/button";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
 import { FaChevronRight } from "react-icons/fa";
 import { getAllPosts } from "@/lib/post-utils";
 

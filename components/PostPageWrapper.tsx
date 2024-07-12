@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Tags from "../Tags";
+import Tags from "./Tags";
 
 interface PostPageWrapperProps {
     tag?: ReactNode;
