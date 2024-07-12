@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
     const bodyCss = cn("h-screen flex flex-col", openhuninnFont.className);
     return (
-        <html lang="zh-Hant-TW" className="scroll-smooth">
+        <html lang="zh-Hant-TW" className="scroll-smooth scroll-pt-20">
             <head>
                 <link rel="shortcut icon" href={image} />
                 <link rel="apple-touch-icon" href={image} />
