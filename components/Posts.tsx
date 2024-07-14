@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 
 const Posts = async ({ posts, imageHight }: { posts: Array<Post>; imageHight?: string }) => {
     return posts.map((post) => {
-        const imageCss = cn("rounded-md h-20 md:h-40 max-w-full", {
+        const imageCss = cn("rounded-md max-w-full", {
             "h-20 md:h-40": imageHight == undefined,
             [String(imageHight)]: imageHight != undefined,
         });
         return (
             <div key={post.title}>
                 <Link href={`/posts/${post.slug}`} className="group">
-                    <h2 className="text-2xl font-bold tracking-wider group-hover:text-primary">{post.title}</h2>
+                    <h2 className="text-lg font-bold tracking-wider md:text-2xl group-hover:text-primary">{post.title}</h2>
                     <span className="flex items-center gap-1 text-[0.75rem]">
                         <MdAccessTime />
                         {post.date}

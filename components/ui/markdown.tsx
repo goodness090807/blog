@@ -62,7 +62,7 @@ export function MarkdownRenderer({ children, slug }: MarkdownRendererProps) {
                             height={1080}
                             src={`/content/posts/${slug}/images/${src}`}
                             alt={alt}
-                            className={className}
+                            className={"my-5"}
                             {...props}
                         />
                     );

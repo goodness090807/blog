@@ -8,6 +8,7 @@ import Image from "next/image";
 import { getHeadings } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import RightBox from "@/components/ui/rightbox";
 
 export function generateMetadata({ params }: MetaProps): Metadata {
     const slug = params.slug;
@@ -40,7 +41,7 @@ const PageDetail = async ({ params }: { params: { slug: string } }) => {
         const headings = getHeadings(post.content);
 
         return (
-            <div className="w-full">
+            <RightBox title="文章目錄">
                 <div className="w-full p-3 rounded-md border flex flex-col flex-wrap min-h-32">
                     <h3 className="tracking-wider font-bold text-primary text-xl">文章目錄</h3>
                     {headings.map((heading) => {
@@ -53,7 +54,7 @@ const PageDetail = async ({ params }: { params: { slug: string } }) => {
                         );
                     })}
                 </div>
-            </div>
+            </RightBox>
         );
     };
 

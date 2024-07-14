@@ -55,7 +55,7 @@ export default function RootLayout({
             <GoogleTagManager gtmId="GTM-5Q2JBQ54" />
             <body className={bodyCss}>
                 <Header />
-                <div className="flex-1 mt-20">
+                <div className="flex-1 mt-16">
                     <main className="flex items-center flex-col">{children}</main>
                 </div>
                 <Footer />
