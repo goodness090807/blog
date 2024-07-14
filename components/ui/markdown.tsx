@@ -4,10 +4,12 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import Image from "next/image";
 
-type MarkdownRendererProps = {
+interface MarkdownRendererProps {
     children: string;
-};
+    slug: string;
+}
 
 const h1 = ({ children }: any) => <h1 className="text-3xl py-5">{children}</h1>;
 const h2 = ({ children }: any) => (
@@ -26,7 +28,7 @@ const a = ({ children, href }: any) => (
     </a>
 );
 
-export function MarkdownRenderer({ children: markdown }: MarkdownRendererProps) {
+export function MarkdownRenderer({ children, slug }: MarkdownRendererProps) {
     return (
         <Markdown
             remarkPlugins={[remarkGfm]}
@@ -53,8 +55,21 @@ export function MarkdownRenderer({ children: markdown }: MarkdownRendererProps) 
                 ul: ul,
                 li: li,
                 a: a,
-            }}>
-            {markdown}
+                img: ({ node, inline, className, src, alt, ...props }: any) => {
+                    return (
+                        <Image
+                            width={1920}
+                            height={1080}
+                            src={`/content/posts/${slug}/images/${src}`}
+                            alt={alt}
+                            className={className}
+                            {...props}
+                        />
+                    );
+                },
+            }}
+        >
+            {children}
         </Markdown>
     );
 }

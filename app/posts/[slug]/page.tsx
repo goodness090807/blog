@@ -2,7 +2,7 @@ import { getPostBySlug, getPostSlugs } from "@/lib/post-utils";
 import { Metadata } from "next";
 import { MdAccessTime } from "react-icons/md";
 import { MarkdownRenderer } from "@/components/ui/markdown";
-import PostPageWrapper from "@/components/ui/PostPageWrapper";
+import PostPageWrapper from "@/components/PostPageWrapper";
 import { MetaProps, websiteName } from "@/lib/variables";
 import Image from "next/image";
 import { getHeadings } from "@/lib/utils";
@@ -65,19 +65,13 @@ const PageDetail = async ({ params }: { params: { slug: string } }) => {
             </span>
 
             <div className="mt-5 flex justify-center">
-                <Image
-                    alt={post.title}
-                    width={1920}
-                    height={1080}
-                    className="max-w-full h-auto w-[720px]"
-                    src={post.imgPath}
-                />
+                <Image alt={post.title} width={1920} height={1080} className="max-w-full h-auto w-[720px]" src={post.imgPath} />
             </div>
 
             <p>{post.description}</p>
 
             <div className="mt-5">
-                <MarkdownRenderer>{post.content}</MarkdownRenderer>
+                <MarkdownRenderer slug={post.slug}>{post.content}</MarkdownRenderer>
             </div>
         </PostPageWrapper>
     );
