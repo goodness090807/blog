@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from "next/image";
+import Lightbox from "./lightbox";
 
 interface MarkdownRendererProps {
     children: string;
@@ -29,47 +32,59 @@ const a = ({ children, href }: any) => (
 );
 
 export function MarkdownRenderer({ children, slug }: MarkdownRendererProps) {
-    return (
-        <Markdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-            components={{
-                code({ node, inline, className, children, ...props }: any) {
-                    const match = /language-(\w+)/.exec(className || "");
+    const [imageSrc, setImageSrc] = useState("");
+    const [imgOpen, setImgOpen] = useState(false);
 
-                    return !inline && match ? (
-                        <SyntaxHighlighter style={dracula} PreTag="div" language={match[1]} {...props}>
-                            {String(children).replace(/\n$/, "")}
-                        </SyntaxHighlighter>
-                    ) : (
-                        <code className={className} {...props}>
-                            {children}
-                        </code>
-                    );
-                },
-                h1: h1,
-                h2: h2,
-                h3: h3,
-                p: p,
-                ol: ol,
-                ul: ul,
-                li: li,
-                a: a,
-                img: ({ node, inline, className, src, alt, ...props }: any) => {
-                    return (
-                        <Image
-                            width={1920}
-                            height={1080}
-                            src={`/content/posts/${slug}/images/${src}`}
-                            alt={alt}
-                            className={"my-5"}
-                            {...props}
-                        />
-                    );
-                },
-            }}
-        >
-            {children}
-        </Markdown>
+    const openImageHandler = (src: string) => {
+        setImageSrc(src);
+        setImgOpen(true);
+    };
+
+    return (
+        <>
+            <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                    code({ node, inline, className, children, ...props }: any) {
+                        const match = /language-(\w+)/.exec(className || "");
+
+                        return !inline && match ? (
+                            <SyntaxHighlighter style={dracula} PreTag="div" language={match[1]} {...props}>
+                                {String(children).replace(/\n$/, "")}
+                            </SyntaxHighlighter>
+                        ) : (
+                            <code className={className} {...props}>
+                                {children}
+                            </code>
+                        );
+                    },
+                    h1: h1,
+                    h2: h2,
+                    h3: h3,
+                    p: p,
+                    ol: ol,
+                    ul: ul,
+                    li: li,
+                    a: a,
+                    img: ({ node, inline, className, src, alt, ...props }: any) => {
+                        return (
+                            <Image
+                                width={1920}
+                                height={1080}
+                                src={`/content/posts/${slug}/images/${src}`}
+                                alt={alt}
+                                className={"my-5 cursor-pointer"}
+                                onClick={() => openImageHandler(`/content/posts/${slug}/images/${src}`)}
+                                {...props}
+                            />
+                        );
+                    },
+                }}
+            >
+                {children}
+            </Markdown>
+            <Lightbox src={imageSrc} open={imgOpen} setOpen={setImgOpen} />
+        </>
     );
 }
