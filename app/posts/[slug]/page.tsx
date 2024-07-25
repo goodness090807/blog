@@ -1,6 +1,7 @@
 import { getPostBySlug, getPostSlugs } from "@/lib/post-utils";
 import { Metadata } from "next";
 import { MdAccessTime } from "react-icons/md";
+import { FaTag } from "react-icons/fa";
 import { MarkdownRenderer } from "@/components/ui/markdown";
 import PostPageWrapper from "@/components/PostPageWrapper";
 import { MetaProps, websiteName } from "@/lib/variables";
@@ -63,10 +64,27 @@ const PageDetail = async ({ params }: { params: { slug: string } }) => {
             <span className="flex gap-2 items-center text-primary mt-3">
                 <MdAccessTime />
                 {post.date}
+                <FaTag />
+                {post.tags.map((tag) => {
+                    return (
+                        <Link key={tag} href={`/tags/${encodeURIComponent(tag)}`} className="p-0 m-0 leading-1">
+                            <Button variant="link" className="p-0 m-0">
+                                # {tag}
+                            </Button>
+                        </Link>
+                    );
+                })}
             </span>
 
             <div className="mt-5 flex justify-center">
-                <Image alt={post.title} width={1920} height={1080} className="max-w-full h-auto w-[720px]" src={post.imgPath} />
+                <Image
+                    alt={post.title}
+                    width={1920}
+                    height={1080}
+                    className="max-w-full h-auto w-[720px]"
+                    priority
+                    src={post.imgPath}
+                />
             </div>
 
             <p>{post.description}</p>

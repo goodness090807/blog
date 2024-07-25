@@ -16,7 +16,7 @@ const NewPosts = async () => {
                 <hr className="border-b border-gray-200" />
             </CardHeader>
             <CardContent className="pb-2">
-                <Posts posts={posts} imageHight="h-20 md:h-32" />
+                <Posts posts={posts} imageHight="h-20 md:h-40" />
             </CardContent>
             <CardFooter className="pb-2 flex justify-end">
                 <Link href={"/posts"}>

@@ -28,6 +28,11 @@ const config = {
                     DEFAULT: "hsl(var(--secondary))",
                     foreground: "hsl(var(--secondary-foreground))",
                 },
+                link: {
+                    DEFAULT: "hsl(var(--link))",
+                    foreground: "hsl(var(--link-foreground))",
+                },
+                "link-hover": "hsl(var(--link-hover))",
                 "secondary-hover": "hsl(var(--secondary-hover))",
                 destructive: {
                     DEFAULT: "hsl(var(--destructive))",

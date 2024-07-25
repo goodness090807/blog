@@ -2,7 +2,7 @@
 title: "網站分析必備：如何利用GA4和GTM追蹤用戶與網頁的互動紀錄"
 description: "當網站開發完成後，除了優化 SEO 外，追蹤網站流量來源也是至關重要。本文將介紹如何啟用Google Tag Manager (GTM)並管理Google Analytics 4(GA4)，從而有效地監控和分析網站流量。"
 date: "2024-07-11"
-tags: ["網頁技術", "GA4", "GTM"]
+tags: ["網頁技術", "網頁行銷"]
 ---
 
 ## 介紹
@@ -20,7 +20,6 @@ tags: ["網頁技術", "GA4", "GTM"]
 ## 整合流程
 
 ![Web串接GTM串接GA](1.png)
-
 這邊參考了 GA 文件上提供的[流程圖](https://support.google.com/tagmanager/answer/9442095?hl=zh-Hant)，根據上圖所顯示的關聯，大概能分成幾個重點
 
 -   GTM 與 GA4 進行關聯，用來管理追蹤碼

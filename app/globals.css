@@ -21,6 +21,10 @@
         --secondary-hover: 201 34% 78%;
         --secondary-foreground: 222.2 47.4% 97%;
 
+        --link: 237, 91%, 53%;
+        --link-foreground: 193 58% 45%;
+        --link-hover: 216 41% 45%;
+
         --muted: 210 40% 96.1%;
         --muted-foreground: 215.4 16.3% 46.9%;
 
